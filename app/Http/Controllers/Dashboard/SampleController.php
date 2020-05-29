@@ -41,7 +41,7 @@ class SampleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $request->user()->authorizeRoles(['admin']);
         $types = Type::pluck('id','name');
