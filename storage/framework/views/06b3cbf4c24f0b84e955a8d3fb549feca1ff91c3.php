@@ -31,7 +31,6 @@
                     
                     <div class="container-fluid">
                         <?php echo $__env->make('dashboard.partials.alerts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                        <router-view></router-view>
                         <?php echo $__env->yieldContent('content'); ?>
                     
                     </div><!-- /.container-fluid -->

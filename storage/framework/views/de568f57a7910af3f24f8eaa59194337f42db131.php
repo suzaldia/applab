@@ -10,7 +10,7 @@
           <a href='/' class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
+          <a href="<?php echo e(route('getContactPage')); ?>" class="nav-link">Contact</a>
       </li>
     </ul>
     
@@ -45,7 +45,7 @@
         </a>
       </li>
 
-      <!-- Profile Dropdown Menu -->
+      <!-- Useer Dropdown Menu -->
       <div class="user-panel pb-1 mt-1 pr-1 d-flex">
         <div class="image">
         <img src="<?php echo e(asset('images/user1.jpg')); ?>" class="img-circle elevation-1" alt="User Image">
@@ -56,10 +56,10 @@
             <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <router-link class="dropdown-item" to="/profile">
-                Profile
-                <i class="fas fa-user"></i>
-            </router-link>
+            <a href="<?php echo e(route('auth.change_password')); ?>" class="dropdown-item">
+                Change password
+                <i class="fas fa-key"></i>
+            </a>
             <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">

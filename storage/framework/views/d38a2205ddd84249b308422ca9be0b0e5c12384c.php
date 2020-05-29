@@ -1,6 +1,10 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row justify-content-center">
+        <div class="title">
+            AppLAB
+            <h3>Management processes chemical plant</h3>
+        </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><?php echo e(__('Login')); ?></div>

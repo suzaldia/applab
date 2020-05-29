@@ -1,0 +1,2 @@
+<option value="in progress">In progress</option>
+<option value="completed" <?php echo e($value == 'completed' ? 'selected="selected"' : ''); ?> >Completed</option><?php /**PATH C:\laragon\www\applab\resources\views/dashboard/samples/partials/status.blade.php ENDPATH**/ ?>
