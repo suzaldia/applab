@@ -20,19 +20,22 @@
             </a>
           </li>
           <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{ route('samples.index') }}" class="nav-link">
               <i class="nav-icon fas fa-flask"></i>
               <p>
                 Samples
-              <span class="badge badge-info right">{{ $samples ?? '0' }}</span>
+                <?php use App\Sample; $samples_count = Sample::where('status', 'in progress')->get()->count(); ?>
+              <span class="badge badge-info right">{{ $samples_count ?? '0' }}</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('incidences.index') }}" class="nav-link">
               <i class="nav-icon fas fa-biohazard"></i>
               <p>
                 Incidences
+                <?php use App\Incidence; $incidences_count = Incidence::where('status', '!=', 'closed')->get()->count(); ?>
+                <span class="badge badge-danger right">{{ $incidences_count ?? '0' }}</span>
               </p>
             </a>
           </li>
@@ -46,7 +49,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="#" class="nav-link ">
+              <a href="{{ route('users.index') }}" class="nav-link ">
                   <i class="nav-icon fas fa-user"></i>
                   <p>Users</p>
                   <?php use App\User; $users_count = User::all()->count(); ?>
@@ -54,13 +57,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+              <a href="{{ route('roles.index') }}" class="nav-link ">
                   <i class="nav-icon fas fa-users-cog"></i>
                   <p>Roles</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{ route('permissions.index') }}" class="nav-link ">
                   <i class="nav-icon fas fa-user-lock"></i>
                   <p>Permissions</p>
                 </a>
@@ -68,7 +71,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{ url('roles') }}" class="nav-link">
+            <a href="{{ url('/dashboard/tasks') }}" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p> Maintenance tasks</p>
             </a>
@@ -80,25 +83,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{ route('types.index') }}" class="nav-link ">
                   <i class="nav-icon fab fa-battle-net"></i>
-                  <p>Types of processes</p>
+                  <p>Types of samples</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{ route('parametres.index') }}" class="nav-link ">
                   <i class="nav-icon fas fa-vial"></i>
-                  <p> Analytical techniques</p>
+                  <p> Analytical parametres</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{ route('categories.index') }}" class="nav-link ">
                   <i class="nav-icon fas fa-th-list"></i>
                   <p>Incidence categories</p>
                 </a>
               </li>
             </ul>
-          </li>     
+          </li>  
+          <li class=" nav-header nav-item">
+            <a href="{{ route('incidences.create') }}" class="nav-link">
+              <i class="nav-icon fas fa-plus text-danger"></i>
+              <p>New Incidence</p>
+            </a>
+          </li>   
          </ul>
       </nav>
       <!-- /.sidebar-menu -->
