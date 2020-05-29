@@ -8,6 +8,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vuelidate from 'vuelidate'
+import VueMask from 'v-mask'
+import VueAWN from "vue-awesome-notifications"
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -20,6 +25,12 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('task-component', require('./components/TaskComponent.vue').default);
+Vue.component('contact-component', require('./components/ContactComponent.vue').default);
+
+Vue.use(Vuelidate)
+Vue.use(VueMask);
+Vue.use(VueAWN);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
