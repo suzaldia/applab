@@ -31,7 +31,6 @@
                     
                     <div class="container-fluid">
                         @include('dashboard.partials.alerts')
-                        <router-view></router-view>
                         @yield('content')
                     
                     </div><!-- /.container-fluid -->
