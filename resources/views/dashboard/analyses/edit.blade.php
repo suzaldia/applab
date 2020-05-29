@@ -19,5 +19,5 @@
         </div>
     </div>
 </div>
-<a href="{{ URL::previous() }}" class="btn btn-outline-dark">Back</a>
+
 @endsection
