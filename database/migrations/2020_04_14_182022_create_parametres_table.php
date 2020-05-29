@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePermissionsTable extends Migration
+class CreateParametresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreatePermissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('parametres', function (Blueprint $table) {
             $table->id();
             $table->string('name', 120);
+            $table->string('unit', 45);
+            $table->double('limit', 7, 2)->nullable();
+            $table->text('observations')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreatePermissionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('parametres');
     }
 }
